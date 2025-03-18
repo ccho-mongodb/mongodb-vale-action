@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@master
 
       - id: files
-        uses: masesgroup/retrieve-changed-files@v2
+        uses: masesgroup/retrieve-changed-files@v3
         with:
           format: 'csv'
 
@@ -31,7 +31,7 @@ jobs:
             cp -rf tdbx-vale-rules/.github/styles/ .github/
 
       - name: run-vale
-        uses: errata-ai/vale-action@reviewdog
+        uses: errata-ai/vale-action@reviewdog20
         with:
           reporter: github-pr-check
           files: ${{steps.files.outputs.added_modified}}
